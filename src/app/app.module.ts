@@ -4,7 +4,8 @@ import{ RouterModule,Routes } from '@angular/router';
 import{FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import{ SelectRequiredValidatorDirective} from './shared/selective-required-validator.directive';
+import{ConfirmEqualValidatorDirective} from './shared/confirm-equal-validator.directive';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +24,8 @@ const appRoutes: Routes =[
   declarations: [
     AppComponent,
     ListEmployeesComponent,
-    
+    SelectRequiredValidatorDirective,
+    ConfirmEqualValidatorDirective,
     CreateEmployeeComponent
   ],
   imports: [

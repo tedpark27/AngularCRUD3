@@ -29,7 +29,9 @@ export class CreateEmployeeComponent implements OnInit {
     dateOfBirth: null,
     department: null,
     isActive: null,
-    photoPath: null
+    photoPath: null,
+    password:null,
+    confirmPassword:null
   }
   
   
@@ -66,6 +68,8 @@ togglePhotoPreview(){
     department: string;
     isActive: boolean;
     photoPath?: string;
+    password:string;
+    confirmPassword: string;
   
    
 }
