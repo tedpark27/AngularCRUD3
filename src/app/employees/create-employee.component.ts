@@ -5,6 +5,8 @@ import{Employee} from '../models/employee.model';
 import{Department} from '../models/department.model';
 import{FormsModule} from '@angular/forms';
 import { ChangeDetectorRef, AfterContentChecked} from '@angular/core';
+import {EmployeeService} from './employee.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -27,7 +29,7 @@ export class CreateEmployeeComponent implements OnInit {
     phoneNumber: null,
     contactPreference: null,
     dateOfBirth: null,
-    department: null,
+    department: '-1',
     isActive: null,
     photoPath: null,
     password:null,
@@ -38,13 +40,13 @@ export class CreateEmployeeComponent implements OnInit {
     //constructor(private _compiler: Compiler,) { this._compiler.clearCache();}
   
   constructor(
-    private cdref: ChangeDetectorRef) { }
-  
-    ngAfterContentChecked() {
-  
-      this.cdref.detectChanges();
-  
+    private _employeeService :EmployeeService,
+    private _router : Router) { 
+
+
     }
+  
+   
   
  
   
@@ -54,8 +56,9 @@ togglePhotoPreview(){
   ngOnInit(): void {
   }
 
-  saveEmployee(newemployee: Employee){
- console.log(newemployee);
+  saveEmployee() : void{
+ this._employeeService.save(this.employee);
+ this._router.navigate(['list']);
   }
 
   id: number;

@@ -1,88 +1,9 @@
-<div class="panel panel-primary" *ngFor="let employee of employees">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{employee.name}}</h3>
-    </div>
+<!-- <div  *ngFor="let employee of employees">
+ <app-display-employee [employee]="employee"></app-display-employee>
     
-    <div class="panel-body"> 
-        <div class="col-xs-10">
-            <div class="row  vertical-align" >
-                <div class="col-xs-4">
-                    <img class="imageClass" [src]="employee.photoPath" />
-                </div>
-                <div class="col-xs-8">
-                    
-                    <!-- /** **/ -->
-                    <div class="row">
-                        <div class="col-xs-6">
-                            Gender
-                        </div>
-                        <div class="col-xs-6">
-                           {{employee.gender}}
-                        </div>
-                    </div>
-
-                    <!-- /** DateOfBirth **/ -->
-                    <div class="row">
-                        <div class="col-xs-6">
-                            Date of Birth
-                        </div>
-                        <div class="col-xs-6">
-                           {{employee.dateOfBirth | date}}
-                        </div>
-                    </div>
-
-                    <!-- /** contact Preference **/ -->
-                    <div class="row">
-                        <div class="col-xs-6">
-                            contact Preference
-                        </div>
-                        <div class="col-xs-6">
-                           {{employee.contactPreference}}
-                        </div>
-                    </div>
-                   
-                    <!-- /** phone**/ -->
-                    <div class="row">
-                        <div class="col-xs-6">
-                           phone
-                        </div>
-                        <div class="col-xs-6">
-                           {{employee.phoneNumber}}
-                        </div>
-                    </div>
-
-                    <!-- /**Email **/ -->
-                    <div class="row">
-                        <div class="col-xs-6">
-                            Email
-                        </div>
-                        <div class="col-xs-6">
-                           {{employee.email}}
-                        </div>
-                    </div>
-
-                     <!-- /**Department **/ -->
-                     <div class="row">
-                        <div class="col-xs-6">
-                            Department
-                        </div>
-                        <div class="col-xs-6">
-                           {{employee.Department}}
-                        </div>
-                    </div>
-
-                    <!-- /**Department **/ -->
-                    <div class="row">
-                        <div class="col-xs-6">
-                            isActive
-                        </div>
-                        <div class="col-xs-6">
-                           {{employee.isActive}}
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</div> -->
+<button (click) ='nextEmployee()' class ="btn btn-primary">
+    View Next Employee
+    </button>
+    <br/><br/>
+<app-display-employee [employee]="employeeToDisplay"></app-display-employee>

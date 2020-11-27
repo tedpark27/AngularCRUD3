@@ -6,12 +6,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import{ SelectRequiredValidatorDirective} from './shared/selective-required-validator.directive';
 import{ConfirmEqualValidatorDirective} from './shared/confirm-equal-validator.directive';
-
+import {EmployeeService} from './employees/employee.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListEmployeesComponent } from './employees/list-employees.component';
 import { CreateEmployeeComponent } from './employees/create-employee.component';
+import { DisplayEmployeeComponent } from './employees/display-employee.component';
 
 
 const appRoutes: Routes =[
@@ -26,7 +27,8 @@ const appRoutes: Routes =[
     ListEmployeesComponent,
     SelectRequiredValidatorDirective,
     ConfirmEqualValidatorDirective,
-    CreateEmployeeComponent
+    CreateEmployeeComponent,
+    DisplayEmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,7 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes)
     
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
